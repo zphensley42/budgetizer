@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends "bootstrap/base.html" %}
+
+{% block styles %}
+  {{super()}}
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+{% endblock %}
+
+{% block title %}Error{% endblock %}
+
+{% block content %}
+<div class="vertical-center"> <!-- Center our container -->
+  <div class="container">
+    <div class="row">
+      <div class="error-not-found-text col-md-8 col-md-offset-2">Sorry, the resource you were looking for doesn't exist!</div>
+    </div>
+  </div>
+</div>
+{% endblock %}

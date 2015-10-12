@@ -1,0 +1,41 @@
+ul.budgets-navigation {
+
+  list-style-type: none;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-top: 10px;
+}
+
+li.budgets-li {
+
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+  font-size: 20px;
+}
+
+li.even {
+
+  background-color: #A1B7B7;
+}
+
+li.odd {
+
+  background-color: #B7B7B7;
+}
+
+div.error-not-found-text {
+
+  font-size: 40px;
+  color: red;
+  text-align: center;
+}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
