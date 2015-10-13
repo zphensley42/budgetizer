@@ -38,7 +38,7 @@
         </div>
 
         <div class="panel-body">
-          <p class="budget-id">The following information is a listing of attributes related to this budget:</p>
+          <p>The following information is a listing of attributes related to this budget:</p>
         </div>
 
         <ul class="list-group">
@@ -47,6 +47,43 @@
         </ul>
       </div>
 
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">Categories</h3>
+        </div>
+
+        <div class="panel-body">
+          <p>The following information is a listing of categories related to this budget:</p>
+        </div>
+
+        {% for category in budget.categories %}
+          <h3>Category:</h3>
+          <ul class="list-group">
+              <li class="list-group-item">Title: {{category.title}}</li>
+              <li class="list-group-item">Amount: {{category.amount}}</li>
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Transactions</h3>
+                </div>
+
+                <div class="panel-body">
+                  <p>The following information is a listing of transactions related to this category:</p>
+                </div>
+
+                {% for category_transaction in category.transactions %}
+                  <h3>Transaction:</h3>
+                  <ul class="list-group">
+                    <li class="list-group-item">To: {{category_transaction.transaction.to}}</li>
+                    <li class="list-group-item">Inflow: {{category_transaction.inflow}}</li>
+                    <li class="list-group-item">Outflow: {{category_transaction.outflow}}</li>
+                    <li class="list-group-item">Notes: {{category_transaction.transaction.notes}}</li>
+                    <li class="list-group-item">Created At: {{category_transaction.transaction.createdAt}}</li>
+                  </ul>
+                {% endfor %}
+              </div>
+          </ul>
+        {% endfor %}
+      </div>
     </div>
   </div>
 {% endblock %}
