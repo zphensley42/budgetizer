@@ -1,5 +1,7 @@
 from . import db
 
+# triple quote = string literal that can span lines
+
 # Models
 class Budget(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -13,7 +15,7 @@ class Budget(db.Model):
 
     @property
     def serialize(self):
-       """Return object data in easily serializeable format"""
+       print('Returning Budget object data in serializable format')
        return {
            'id': self.id,
            'title': self.title,
@@ -22,6 +24,7 @@ class Budget(db.Model):
        }
 
 
+# Join table for many-to-many (Category & Transaction)
 class CategoriesTransactions(db.Model):
     __tablename__ = 'categories_transactions'
     category_id = db.Column(db.Integer, db.ForeignKey('category.id'), primary_key=True)
@@ -43,7 +46,7 @@ class Category(db.Model):
 
     @property
     def serialize(self):
-       """Return object data in easily serializeable format"""
+       print('Returning Category object data in serializable format')
        return {
            'title': self.title,
            'amount': self.amount,
@@ -65,7 +68,7 @@ class Transaction(db.Model):
         self.createdAt = createdAt
 
     def serialize(self, assoc):
-       """Return object data in easily serializeable format"""
+       print('Returning Transaction object data in serializable format')
        return {
            'id': self.id,
            'to': self.to,
