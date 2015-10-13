@@ -74,6 +74,6 @@ class Transaction(db.Model):
            'to': self.to,
            'notes': self.notes,
            'createdAt': self.createdAt,
-           'outflow': assoc.outflow,
-           'inflow': assoc.inflow
+           'outflow': 0 if assoc.outflow == None else assoc.outflow,
+           'inflow': 0 if assoc.inflow == None else assoc.inflow
        }
