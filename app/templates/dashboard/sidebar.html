@@ -1,0 +1,26 @@
+<div id="sidebar" class="col-md-2">
+  <div id="row text-center">
+    <div id="sidebar-panel" class="panel panel-default">
+      <div class="panel-heading">Budgets</div>
+      <div id="sidebar-panel-body" class="panel-body">
+        <ul name="budgets" id="budget-list" class="budget-list">
+          {% for budget in budgets %}
+            <li value="{{budget.id}}" class="budget-item" id='budget-item-{{budget.id}}'>{{budget.title}}</option>
+          {% endfor %}
+        </ul>
+        <div id="sidebar-panel-footer" class="panel-footer">
+          <input id="budget-name-input" type="text" />
+          <button id="budget-done" type="button" class="btn btn-primary">Done</button>
+          <div class="btn-group btn-group-justified" role="group">
+            <div class="btn-group" role="group">
+              <button id="budget-new" type="button" class="btn btn-success">New</button>
+            </div>
+            <div class="btn-group" role="group">
+              <button id="budget-delete" type="button" class="btn btn-danger">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

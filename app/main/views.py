@@ -6,7 +6,14 @@ from ..models import Budget
 
 @main.route("/")
 def hello():
-    return redirect(url_for('.showBudgets'), code=302)
+    return redirect(url_for('.dashboard'), code=302)
+
+@main.route("/dashboard")
+def dashboard():
+
+    # Get our budgets from the db
+    budgetList = Budget.query.all()
+    return render_template('dashboard/dashboard.html', budgets=budgetList)
 
 @main.route("/budgets")
 def showBudgets():

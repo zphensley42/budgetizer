@@ -9,9 +9,8 @@ class Budget(db.Model):
     amount = db.Column(db.Integer)
     categories = db.relationship('Category', backref='budget', lazy='dynamic')
 
-    def __init__(self, title, amount):
+    def __init__(self, title):
         self.title = title
-        self.amount = amount
 
     @property
     def serialize(self):

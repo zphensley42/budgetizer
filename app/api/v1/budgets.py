@@ -27,7 +27,7 @@ def addBudget():
     # Get our budget data
     data = request.form
     if data:
-        newBudget = Budget(data['title'], data['amount'])
+        newBudget = Budget(data['title'])
         db.session.add(newBudget)
         db.session.commit()
 
@@ -36,4 +36,21 @@ def addBudget():
 
     respData = {'message': 'Budget failed to be added'}
     resp = Response(json.dumps(respData), status=400, mimetype='application/json')  # 400: bad request
+    return resp
+
+@api_v1.route('/budgets/delete/<int:budget_id>', methods=['POST'])
+def deleteBudget(budget_id):
+
+    # Find budget by id
+    budget = Budget.query.filter_by(id=budget_id).first()
+    if budget:
+
+        db.session.delete(budget)
+        db.session.commit()
+
+        resp = {'message': 'Budget successfully deleted', 'budget_id': budget_id}
+        return jsonify(resp)
+
+    respData = {'message': 'Budget failed to be deleted (didn\'t exist)'}
+    resp = Response(json.dumps(respData), status=400, mimetype='application/json')  # 400 bad request
     return resp

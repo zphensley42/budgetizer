@@ -39,3 +39,94 @@ div.error-not-found-text {
   display: flex;
   align-items: center;
 }
+
+
+#dashboard-navbar {
+
+  background-color: #222222;
+}
+
+#sidebar {
+
+  overflow-y: auto;
+}
+
+#sidebar-panel-footer {
+
+  padding: 0px;
+}
+
+#sidebar-panel-body {
+
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+#sidebar-panel-body .list-group {
+
+  margin-bottom: 0px
+}
+
+#sidebar-panel-body .list-group a {
+
+  border: 0px white;
+}
+
+#budget-name-input {
+
+  display: none;
+  width: 100%;
+  padding: 5px;
+  width: -moz-calc(100% - 20px);
+  width: -webkit-calc(100% - 20px);
+  width: -o-calc(100% - 20px);
+  width: calc(100% - 20px);
+  margin: 10px;
+}
+
+#budget-done {
+
+  width: 100%;
+  display: none;
+  margin-bottom: 5px;
+}
+
+.budget-list {
+
+  list-style: none;
+  padding-left: 0px;
+  text-align: center;
+}
+
+.budget-list > .budget-item {
+
+  padding: 10px;
+  display: block;
+  background-color: white;
+  color: black;
+}
+
+.budget-list > .budget-item.active {
+  background-color: black;
+  color: white;
+}
+
+.budget-list > .budget-item:hover {
+
+  background-color: #848484;
+}
+
+.category-title {
+
+  display: inline;
+  text-align: left;
+  font-size: 24px;
+}
+
+.category-amount {
+
+  float: right;
+  font-size: 24px;
+}
